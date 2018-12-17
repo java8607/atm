@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>ATM</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:growl id="growl" life="2000" />            
+            <p:link outcome="index.xhtml" value="Volver"/>
+            <div class="ui-fluid" align="center" style="margin-top: 5%;" >                
+                <p:panelGrid columns="1" styleClass="ui-noborder">
+                    <p:inputNumber id="amount" decimalPlaces="0" value="#{atmManagedBean.amount}" placeholder="Valor a retirar" required="true" />                     
+                    <p:commandButton id="btnTransaccion" value="Iniciar Transacción" update="growl" action="#{atmManagedBean.startTransaction}" style="margin-right:20px;"/>
+                </p:panelGrid>
+            </div>
+        </h:form>
+    </h:body>
+</html>
